@@ -10,8 +10,8 @@ phases:
   build:
     commands:
       - echo build Docker image on `date`
-      - docker build -t FROM node:13.12.0-alpine .
-      - docker tag public.ecr.aws/docker/library/node:16.18.1-alpine:latest 962804699607.dkr.ecr.us-west-2.amazonaws.com/repo-vijd:latest
+      - docker build -t repo-vijd .
+      - docker tag repo-vijd:latest 962804699607.dkr.ecr.us-west-2.amazonaws.com/repo-vijd:latest
   post_build:
     commands:
       - echo build Docker image complete `date`
