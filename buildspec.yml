@@ -10,12 +10,12 @@ phases:
     ﻿﻿  - $(aws ecr get-login --no-include-email --region us-west-2)
   build:
     commands:
-      - echo build Docker image on 'date
+      - echo build Docker image on 'date'
       - ﻿﻿cd src|
       - ﻿﻿docker build -t public.ecr.aws/docker/library/node:16.18.1-alpine: latest .
       ﻿﻿- docker tag public.ecr.aws/docker/library/node:16.18.1-alpine: latest 962804699607.dkr.ecr.us-west-2.amazonaws.com/repo-vijd: latest 
   post_build: 
     commands:
-      ﻿﻿- echo build Docker image complete date'
+      ﻿﻿- echo build Docker image complete 'date'
       ﻿﻿- echo push latest Docker images to ECR...
       ﻿﻿- docker push public.ecr.aws/docker/library/node:16.18.1-alpine: latest
